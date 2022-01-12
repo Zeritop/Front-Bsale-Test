@@ -1,0 +1,25 @@
+body{
+    background: #eee;
+}
+
+.button-vista{
+    cursor: pointer;
+}
+
+#selectContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#selectCategory{
+    padding: 5px;
+    background: #fff;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+#navPaginate{
+    margin-top: 20px;
+}
