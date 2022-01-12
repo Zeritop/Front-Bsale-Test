@@ -1,4 +1,4 @@
-let api = 'http://localhost:4000/api/products/get-products'
+let api = 'https://backend-bsale-api-sebas.herokuapp.com/api/products/get-products'
 $(document).ready(function(){
     renderProducts(api);
     getCategory();
@@ -50,7 +50,7 @@ $(document).ready(function(){
 
     // Ver el compotamiento del select de categoria y filtrar por la categoria elegida
     $(document).on('change', '#selectCategory', function(){
-        let api = 'http://localhost:4000/api/products/get-product-by-category'
+        let api = 'https://backend-bsale-api-sebas.herokuapp.com/api/products/get-product-by-category'
         valorCategory = $("#selectCategory option:selected").val()
         $(document).on("click", "#buttonCategory", async function(){
             if(valorCategory !== null && !isNaN(valorCategory)){
@@ -69,7 +69,7 @@ $(document).ready(function(){
         let offsetCount = 10;
         let offset = offsetCount * (number - 1)
         let selectVal = parseInt($("#selectCategory").val())
-        let api = 'http://localhost:4000/api/products/get-product-by-category'
+        let api = 'https://backend-bsale-api-sebas.herokuapp.com/api/products/get-product-by-category'
         
         if($("#selectCategory").val() ===  null){
             selectVal = 0;
@@ -260,7 +260,7 @@ const renderProducts = (api) => {
 
 
 const getCategory = () => {
-    axios.get('http://localhost:4000/api/products/get-category')
+    axios.get('https://backend-bsale-api-sebas.herokuapp.com/api/products/get-category')
     .then(res => {
         res.data.map(item => {
             const category = `<option value="${item.id}">` + `${item.name}` + '</option>'
@@ -325,7 +325,7 @@ const renderPaginate = (nPaginate) => {
 
 
 const renderProductByInput = async (inputSearch) => {
-    const res = await axios.post('http://localhost:4000/api/products/get-product-by-input', {
+    const res = await axios.post('https://backend-bsale-api-sebas.herokuapp.com/api/products/get-product-by-input', {
         inputSearch
     })
 
